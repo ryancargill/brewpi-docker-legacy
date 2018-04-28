@@ -21,7 +21,8 @@ RUN apt-get update && apt-get install -y \
   vim \
   dfu-util \
   apache2-utils \
-  sudo
+  sudo \
+  arduino-core
 
 # upgrade pip
 RUN pip install --upgrade pip
@@ -35,10 +36,14 @@ RUN pip install --upgrade pyserial psutil simplejson configobj gitpython
 # remove existing content in web server root
 RUN rm -rf /var/www/html
 
-# clone brewpi repositories
-RUN git clone --depth 1 https://github.com/BrewPi/brewpi-script /home/brewpi
-RUN git clone --depth 1 https://github.com/BrewPi/brewpi-www /var/www/html
-RUN git clone --depth 1 https://github.com/BrewPi/brewpi-tools /root/brewpi-tools 
+# clone brewpi repositories for legacy branches
+RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-script /home/brewpi
+RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-www /var/www/html
+
+# clone the tag 0.2.0 as this has the arduino config code
+RUN git clone -b master --single-branch https://github.com/BrewPi/brewpi-tools /root/brewpi-tools && \
+    cd /root/brewpi-tools && \
+    git checkout tags/0.2.0 -b tags/0.2.0
 
 # copy nginx conf to nginx default
 RUN mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
