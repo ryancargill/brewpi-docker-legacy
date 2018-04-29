@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER BrewPi / Elco Jacobs <elco@brewpi.com>
+MAINTAINER Travis Baker
 
 # expose port 80, the default web server port
 EXPOSE 80
@@ -44,7 +44,7 @@ RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-www /va
 RUN git clone -b master --single-branch https://github.com/BrewPi/brewpi-tools /root/brewpi-tools && \
     cd /root/brewpi-tools && \
     git checkout tags/0.2.0 -b tags/0.2.0
-    
+
 # copy nginx conf to nginx default
 RUN mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 COPY nginx-conf.txt /etc/nginx/sites-available/default

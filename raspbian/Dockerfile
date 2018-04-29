@@ -1,5 +1,5 @@
 FROM resin/rpi-raspbian:stretch
-MAINTAINER BrewPi / Elco Jacobs <elco@brewpi.com>
+MAINTAINER Travis Baker
 
 # expose port 80, the default web server port
 EXPOSE 80
