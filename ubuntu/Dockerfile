@@ -37,7 +37,7 @@ RUN pip install --upgrade pyserial psutil simplejson configobj gitpython
 RUN rm -rf /var/www/html
 
 # clone brewpi repositories for legacy branches
-RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-script /home/brewpi
+RUN git clone -b legacy --single-branch https://github.com/ryancargill/brewpi-script /home/brewpi
 RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-www /var/www/html
 
 # clone the tag 0.2.0 as this has the arduino config code
