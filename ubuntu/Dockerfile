@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Travis Baker
+MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
 EXPOSE 80
