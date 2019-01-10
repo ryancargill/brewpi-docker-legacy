@@ -33,11 +33,17 @@ RUN pip install --upgrade setuptools wheel
 # install pip dependencies
 RUN pip install --upgrade pyserial psutil simplejson configobj gitpython
 
+# install bluez and python-bluez bluetooth modules to enable communication with the tilt hydrometer
+RUN sudo apt-get install bluez python-bluez python-scipy python-numpy libcap2-bin
+
+#enable python to query bluetooth without being root
+RUN sudo setcap cap_net_raw+eip $(eval readlink -f `which python`)
+
 # remove existing content in web server root
 RUN rm -rf /var/www/html
 
 # clone brewpi repositories for legacy branches
-RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-script /home/brewpi
+RUN git clone -b legacy --single-branch https://github.com/ryancargill/brewpi-script /home/brewpi
 RUN git clone -b legacy --single-branch https://github.com/BrewPi/brewpi-www /var/www/html
 
 # clone the tag 0.2.0 as this has the arduino config code
