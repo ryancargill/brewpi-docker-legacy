@@ -21,8 +21,8 @@ RUN apt-get update && apt-get install -y \
   vim \
   dfu-util \
   apache2-utils \
-  sudo
-RUN apt-get install -y arduino-core
+  sudo \
+  arduino-core
 
 # upgrade pip
 RUN pip install --upgrade pip
