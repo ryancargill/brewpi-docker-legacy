@@ -34,9 +34,6 @@ RUN pip install --upgrade setuptools wheel
 # install pip dependencies
 RUN pip install --upgrade pyserial psutil simplejson configobj gitpython
 
-#install calibration libraries
-RUN sudo apt-get install python-scipy python-numpy
-
 # install bluez and python-bluez bluetooth modules to enable communication with the tilt hydrometer
 RUN sudo apt-get install bluez python-bluez python-scipy python-numpy libcap2-bin
 
