@@ -20,7 +20,7 @@ RUN sudo apt-get update && apt-get install -y \
   nano \
   vim \
   dfu-util \
-  apache2-utils \
+  apache2-utils 
 
 RUN sudo apt-get install -y arduino-core
 
