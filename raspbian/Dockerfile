@@ -1,4 +1,4 @@
-FROM schachr/raspbian-stretch
+FROM resin/rpi-raspbian:stretch
 MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
