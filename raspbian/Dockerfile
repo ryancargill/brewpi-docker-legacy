@@ -7,8 +7,8 @@ EXPOSE 80
 EXPOSE 81
 
 # install apt dependencies
-RUN sudo apt-get update 
-RUN sudo apt-get install -y \
+sudo apt-get update 
+sudo apt-get install -y \
   build-essential \
   python-dev \
   python-pip \
