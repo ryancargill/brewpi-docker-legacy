@@ -21,7 +21,6 @@ RUN sudo apt-get update && apt-get install -y \
   vim \
   dfu-util \
   apache2-utils \
-  sudo
 
 RUN sudo apt-get install -y arduino-core
 
