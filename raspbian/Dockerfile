@@ -6,8 +6,8 @@ EXPOSE 80
 # expose port 81, will proxy to 80 with password protection
 EXPOSE 81
 
-# install apt dependencies
-RUN sudo apt-get update 
+# install apt dependencies, build failing at apt-get update
+#RUN sudo apt-get update 
 RUN sudo apt-get install -y \
   build-essential \
   python-dev \
