@@ -7,7 +7,8 @@ EXPOSE 80
 EXPOSE 81
 
 # install apt dependencies, build failing at apt-get update
-#RUN sudo apt-get update 
+RUN sudo apt update 
+RUN sudo apt-get update
 RUN sudo apt-get install -y \
   build-essential \
   python-dev \
