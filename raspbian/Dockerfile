@@ -45,8 +45,8 @@ RUN sudo setcap cap_net_raw+eip $(eval readlink -f `which python`)
 RUN rm -rf /var/www/html
 
 # clone brewpi repositories for legacy branches
-RUN sudo git clone -b legacy --single-branch https://github.com/ryancargill/brewpi-script /home/brewpi
-RUN sudo git clone -b legacy --single-branch https://github.com/ryancargill/brewpi-www /var/www/html
+RUN sudo git clone -b master --single-branch https://github.com/ryancargill/brewpi-script /home/brewpi
+RUN sudo git clone -b master --single-branch https://github.com/ryancargill/brewpi-www /var/www/html
 
 # clone the tag 0.2.0 as this has the arduino config code
 RUN sudo git clone -b master --single-branch https://github.com/BrewPi/brewpi-tools /root/brewpi-tools && \
