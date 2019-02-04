@@ -1,5 +1,4 @@
 FROM arm64v8/debian:stretch
-COPY qemu-aarch64-static /usr/bin/
 MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
