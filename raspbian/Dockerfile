@@ -7,9 +7,7 @@ EXPOSE 80
 EXPOSE 81
 
 # install apt dependencies, build failing at apt-get update
-RUN sudo apt update 
-RUN sudo apt-get update
-RUN sudo apt-get install -y \
+RUN apt-get update && apt-get install -y \
   build-essential \
   python-dev \
   python-pip \
@@ -22,7 +20,8 @@ RUN sudo apt-get install -y \
   nano \
   vim \
   dfu-util \
-  apache2-utils 
+  apache2-utils \
+  sudo
 
 RUN sudo apt-get install -y arduino-core
 
