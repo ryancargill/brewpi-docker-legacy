@@ -1,4 +1,4 @@
-FROM raspbian/stretch:041518
+FROM multiarch/debian-debootstrap:arm64-stretch
 MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
