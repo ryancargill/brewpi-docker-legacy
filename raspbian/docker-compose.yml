@@ -2,7 +2,7 @@ version: '2'
 services:
   brewpi:
     build: .
-    image: brewpi/brewpi-raspbian
+    image: ryancargill/legbrewpi:RPi-TiltHydro
     container_name: brewpi-${BREWPI_ID} 
     hostname: brewpi-${BREWPI_ID}.local
     ports:
