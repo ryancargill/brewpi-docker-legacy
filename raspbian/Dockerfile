@@ -1,4 +1,4 @@
-FROM arm64v8/debian:stretch
+FROM armhf/debian:stretch
 MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
