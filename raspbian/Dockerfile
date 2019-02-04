@@ -1,4 +1,4 @@
-FROM multiarch/debian-debootstrap:arm64-stretch
+FROM arm64v8/debian:stretch
 MAINTAINER Ryan Cargill
 
 # expose port 80, the default web server port
