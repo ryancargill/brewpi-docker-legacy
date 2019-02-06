@@ -34,8 +34,11 @@ RUN sudo pip install --upgrade setuptools wheel
 # install pip dependencies
 RUN sudo pip install --upgrade pyserial psutil simplejson configobj gitpython
 
-# install bluez and python-bluez bluetooth modules to enable communication with the tilt hydrometer
-RUN sudo apt-get install bluez python-bluez python-scipy python-numpy libcap2-bin
+# install bluez and python-bluez bluetooth modules to enable communication with the tilt hydrometer and dependent packages
+RUN sudo apt-get install libcap2-bin libcap2 libpam-cap
+RUN sudo apt-get install python-bluez libbluetooth3
+RUN sudo apt-get install bluez kmod libkmod2 libudev1 udev
+RUN sudo apt-get install python-scipy libblas-common libblas3 libgfortran3 liblapack3 liblcms2-2 libwebpdemux2 libwebpmux2 python-decorator python-imaging python-numpy python-pil 
 
 #enable python to query bluetooth without being root
 RUN sudo setcap cap_net_raw+eip $(eval readlink -f `which python`)
