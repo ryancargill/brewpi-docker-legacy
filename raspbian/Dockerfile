@@ -28,6 +28,9 @@ RUN sudo apt-get install -y arduino-core
 # upgrade pip
 RUN sudo pip install --upgrade pip
 
+# install setuptools and wheel
+RUN pip install --upgrade setuptools wheel
+
 # install pip dependencies
 RUN sudo pip install --upgrade pyserial psutil simplejson configobj gitpython
 
