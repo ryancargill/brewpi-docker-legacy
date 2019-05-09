@@ -39,7 +39,7 @@ RUN sudo git clone -b master --single-branch https://github.com/ryancargill/brew
 RUN sudo git clone -b master --single-branch https://github.com/ryancargill/brewpi-www /var/www/html
 
 # clone the tag 0.2.0 as this has the arduino config code
-RUN sudo git clone -b master --single-branch https://github.com/BrewPi/brewpi-tools /root/brewpi-tools && \
+RUN sudo git clone -b master --single-branch https://github.com/ryancargill/brewpi-tools /root/brewpi-tools && \
     cd /root/brewpi-tools && \
     sudo git checkout tags/0.2.0 -b tags/0.2.0
 
